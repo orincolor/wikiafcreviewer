@@ -1,0 +1,61 @@
+/*
+ * Styling for the WikiAfCReviewer advisory panel.
+ * Load alongside WikiAfCReviewer.js (e.g. via mw.util.addCSS or a common.css import).
+ * Licensed under the GNU General Public License v3.0 or later.
+ */
+
+.wafc-container {
+	border: 1px solid #a2a9b1;
+	background: #f8f9fa;
+	border-radius: 2px;
+	padding: 0.75em 1em;
+	margin: 0 0 1em;
+}
+
+.wafc-container > h3 {
+	margin-top: 0;
+}
+
+.wafc-status {
+	font-style: italic;
+	color: #54595d;
+}
+
+.wafc-error {
+	color: #b32424;
+	font-weight: bold;
+}
+
+.wafc-verdict {
+	font-size: 1.1em;
+}
+
+.wafc-verdict-accept strong {
+	color: #14866d;
+}
+
+.wafc-verdict-decline strong {
+	color: #b32424;
+}
+
+.wafc-verdict-borderline strong {
+	color: #b8860b;
+}
+
+.wafc-sources td.wafc-yes {
+	color: #14866d;
+	text-align: center;
+}
+
+.wafc-sources td.wafc-no {
+	color: #b32424;
+	text-align: center;
+}
+
+.wafc-disclaimer {
+	margin-top: 0.75em;
+	font-size: 0.85em;
+	color: #54595d;
+	border-top: 1px solid #eaecf0;
+	padding-top: 0.5em;
+}
