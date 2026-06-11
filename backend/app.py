@@ -32,9 +32,24 @@ log = logging.getLogger(__name__)
 # Origin the companion userscript runs from. Override via ALLOWED_ORIGIN if needed.
 ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "https://en.wikipedia.org")
 
+# Dev-only: when set, flask-cors answers Chrome's Private Network Access preflight
+# so a local browser on an https wiki page can call this backend over
+# http://localhost during UI testing. Off by default; harmless in production
+# (Toolforge serves over https, where PNA does not apply).
+ALLOW_PRIVATE_NETWORK = os.environ.get("ALLOW_PRIVATE_NETWORK") == "1"
+
 app = Flask(__name__)
 # Restrict CORS to /review and the wiki origin; flask-cors answers the preflight.
-CORS(app, resources={r"/review": {"origins": ALLOWED_ORIGIN}}, methods=["POST"])
+CORS(
+    app,
+    resources={
+        r"/review": {
+            "origins": ALLOWED_ORIGIN,
+            "allow_private_network": ALLOW_PRIVATE_NETWORK,
+        }
+    },
+    methods=["POST"],
+)
 
 wiki = PoliteWiki()
 client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from the environment.
