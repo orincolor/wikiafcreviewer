@@ -15,3 +15,6 @@ env/
 # OS / editor
 .DS_Store
 *.swp
+
+# Local dev-only userscript (points at localhost backend) — never publish
+*.local.user.js
