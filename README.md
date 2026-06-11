@@ -1,5 +1,9 @@
 # WikiAfCReviewer
 
+
+<img width="1470" height="921" alt="Screenshot 2026-06-11 at 2 09 49 AM" src="https://github.com/user-attachments/assets/25cba001-3e4d-407a-b9e1-cf486a08a565" />
+
+
 An **advisory AI assessment tool** for Wikipedia Articles for Creation (AfC) drafts. It adds an
 "AI Assessment" panel to `Draft:` pages that returns a source-by-source notability assessment
 (WP:GNG / SNG), neutrality (WP:NPOV) and conflict-of-interest (WP:COI) flags, citation-quality
